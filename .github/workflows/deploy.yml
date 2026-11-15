@@ -12,13 +12,11 @@ permissions:
 
 concurrency:
   group: 'pages'
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # 1. Trabajo de compilación y empaquetado del artefacto
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Clonar repositorio
@@ -35,14 +33,19 @@ jobs:
       - name: Compilar proyecto (Vite)
         run: npm run build
 
-      - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Subir artefacto de compilación
+      - name: Subir artefacto para GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
+  # 2. Trabajo de despliegue (espera a que el artefacto esté disponible)
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Desplegar a GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
