@@ -60,6 +60,6 @@ export const DEFAULT_CHARACTER: LiminalCharacter = {
   hp: { current: 4, max: 4 },
   armor: 0,
   stability: 0,
-  inventory: Array.from({ length: 10 }, (_, i) => null),
+  inventory: Array.from({ length: 10 }, () => null),
   notes: ''
 };

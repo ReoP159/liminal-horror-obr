@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RollEvent } from '../types/character';
 import { X } from 'lucide-react';
 
@@ -7,7 +7,7 @@ interface Props {
   onClose: () => void;
 }
 
-export const DiceRollOverlay: React.FC<Props> = ({ rollEvent, onClose }) => {
+export const DiceRollOverlay = ({ rollEvent, onClose }: Props) => {
   const [isRolling, setIsRolling] = useState(true);
   const [displayNumber, setDisplayNumber] = useState<number>(1);
 

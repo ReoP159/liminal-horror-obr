@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   LiminalCharacter,
   DEFAULT_CHARACTER,
@@ -103,7 +103,7 @@ export default function App() {
   }, [currentTargetPlayerId, allCharacters[currentTargetPlayerId || ''], isGM]);
 
   // Auto-guardado debounced
-  const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const triggerAutoSave = (updatedChar: LiminalCharacter) => {
     if (!currentTargetPlayerId) return;
