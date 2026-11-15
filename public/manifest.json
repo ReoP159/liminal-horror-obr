@@ -1,0 +1,15 @@
+{
+  "name": "Liminal Horror Sheet",
+  "version": "1.0.0",
+  "manifest_version": 1,
+  "author": "Liminal Horror RPG",
+  "description": "Ficha de personaje y registro de Atributos, HP, Inventario y Secuelas (Fallout) para Liminal Horror",
+  "icon": "./icon.svg",
+  "action": {
+    "title": "Liminal Horror",
+    "icon": "./icon.svg",
+    "popover": "./index.html",
+    "width": 410,
+    "height": 680
+  }
+}

@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-liminal-bg text-gray-200 font-sans;
+    user-select: none;
+  }
+
+  /* Custom subtle scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f1115;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2f3d;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d9383a;
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg) scale(0.92);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.92);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 1s linear infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.18s ease-out forwards;
+}
+
+.liminal-header-glitch {
+  letter-spacing: 0.15em;
+  text-shadow: 1px 0px 1px rgba(217, 56, 58, 0.6), -1px 0px 1px rgba(57, 194, 120, 0.6);
+}
