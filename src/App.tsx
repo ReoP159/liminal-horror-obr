@@ -341,6 +341,11 @@ export default function App() {
           <span className="font-mono font-bold text-xs tracking-wider uppercase text-gray-200">
             LIMINAL HORROR
           </span>
+          {import.meta.env.DEV && (
+            <span className="bg-amber-500/20 text-amber-400 border border-amber-500/50 text-[9px] font-mono font-bold px-1.5 py-0.5 rounded">
+              DEV
+            </span>
+          )}
           <span className="text-[10px] font-mono text-gray-400">
             [{isGM ? 'GUARDIÁN' : obrState.playerName}]
           </span>
