@@ -24,6 +24,6 @@ Extensión de ficha de personaje y panel de control para el juego de rol **Limin
 2. Ve a tu Perfil > **Extensions** > **Add Extension**.
 3. Pega la URL directa al archivo `manifest.json` de tu extensión:
    ```text
-   https://TU_DOMINIO_O_HOST/manifest.json
+   https://reop159.github.io/liminal-horror-obr/manifest.json
    ```
 4. Abre cualquier sala de Owlbear Rodeo y activa la extensión desde la barra de herramientas.
